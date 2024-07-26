@@ -167,7 +167,7 @@ def main():
     CNN_encoder = EncodeCNN(img_x, img_y, CNN_fc_hidden1, CNN_fc_hidden2,
                             dropout_probs=dropout_probs, embedding_dim=CNN_embedding_dim)
     RNN_decoder = DecodeRNN(CNN_embedding_dim, RNN_hidden_layers,
-                            RNN_hidden_dim, RNN_FC_dim, dropout_probs, k)
+                            RNN_hidden_dim, RNN_FC_dim, dropout_probs, num_classes=k)
     CRNN_params = list(CNN_encoder.parameters()) + \
         list(RNN_decoder.parameters())
     # Define loss and optimizer
@@ -187,3 +187,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
