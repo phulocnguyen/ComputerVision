@@ -1,1 +1,1 @@
-# Implementations of basic Deep Learning Tasks
+# Implementations of basic Computer Vision Tasks
