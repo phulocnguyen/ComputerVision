@@ -9,7 +9,7 @@ import torch.optim as optim
 from modules import *
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import OneHotEncoder, LabelEncoder
-from sklearn.metrics import accuracy_score
+from sklearn.metrics import accuracy_score # type: ignore
 import pickle
 import argparse
 
