@@ -41,21 +41,24 @@ No single template can cover all needs, so feel free to suggest improvements or 
 Getting Started
 To set up this project locally, follow these steps.
 
-Prerequisites
+1. Prerequisites
 Ensure you have the following installed:
-
   Python 3.x
   pip
   OpenCV, TensorFlow, PyTorch, and other required libraries (detailed in requirements.txt).
-Installation
+2. Installation
   Clone the repository:
-    git clone https://github.com/phulocnguyen/ComputerVision.git
+    ```git clone https://github.com/phulocnguyen/ComputerVision.git
+    ```
 Navigate to the project directory:
-  cd ComputerVision
+
+  ```cd ComputerVision
+  ```
 Install the required packages:
-  pip install -r requirements.txt
+  ```pip install -r requirements.txt
+  ```
 <!-- USAGE EXAMPLES -->
-Usage
+3. Usage
 This section provides examples of how to use the different modules within the project. For instance, to run the image classification task, use the following command:
   python image_classification.py --image_path path/to/image.jpg  
 For more detailed instructions and examples, refer to the documentation.
