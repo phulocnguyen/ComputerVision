@@ -46,10 +46,10 @@ Getting Started
 To set up this project locally, follow these steps.
 
 1. Prerequisites
-Ensure you have the following installed:
-  * Python 3.x
-  * pip
-  * OpenCV, TensorFlow, PyTorch, and other required libraries (detailed in requirements.txt).
+  Ensure you have the following installed:
+    * Python 3.x
+    * pip
+    * OpenCV, TensorFlow, PyTorch, and other required libraries (detailed in requirements.txt).
 2. Installation
   * Clone the repository:
     
