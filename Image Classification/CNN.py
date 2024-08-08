@@ -10,12 +10,11 @@ import torchvision.datasets as datasets
 import torchvision.transforms as transforms
 
 # download and load dataset
-
-
 def data_module(batch_size):
     transform = transforms.Compose([
         transforms.ToTensor(),
-        transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))])
+        transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))
+    ])
 
     training_data = datasets.CIFAR10(
         root='./data', train=True, download=True, transform=transform)
@@ -23,21 +22,21 @@ def data_module(batch_size):
         root='./data', train=False, download=True, transform=transform)
 
     valid_size = 0.2
+    train_size = int((1 - valid_size) * len(training_data))
+    val_size = len(training_data) - train_size
     training_data, val_data = data.random_split(
-        training_data, [1-valid_size, valid_size])
+        training_data, [train_size, val_size])
 
     train_dataloader = data.DataLoader(
-        training_data, batch_size, shuffle=True, num_workers=2)
+        training_data, batch_size=batch_size, shuffle=True, num_workers=2)
     val_dataloader = data.DataLoader(
-        val_data, batch_size, shuffle=False, num_workers=2)
+        val_data, batch_size=batch_size, shuffle=False, num_workers=2)
     test_dataloader = data.DataLoader(
-        test_data, batch_size, shuffle=True, num_workers=2)
+        test_data, batch_size=batch_size, shuffle=False, num_workers=2)
 
-    return train_dataloader, test_dataloader, val_dataloader
+    return train_dataloader, val_dataloader, test_dataloader
 
 # define the model
-
-
 class Net(nn.Module):
     def __init__(self):
         super(Net, self).__init__()
@@ -49,25 +48,24 @@ class Net(nn.Module):
             in_channels=12, out_channels=12, kernel_size=5, stride=1, padding=1)
         self.bn2 = nn.BatchNorm2d(12)
         self.pool = nn.MaxPool2d(2, 2)
-        self.conv4 = nn.Conv2d(
+        self.conv3 = nn.Conv2d(
             in_channels=12, out_channels=24, kernel_size=5, stride=1, padding=1)
-        self.bn4 = nn.BatchNorm2d(24)
-        self.conv5 = nn.Conv2d(
+        self.bn3 = nn.BatchNorm2d(24)
+        self.conv4 = nn.Conv2d(
             in_channels=24, out_channels=24, kernel_size=5, stride=1, padding=1)
-        self.bn5 = nn.BatchNorm2d(24)
+        self.bn4 = nn.BatchNorm2d(24)
         self.fc1 = nn.Linear(24*10*10, 10)
 
     def forward(self, input):
         output = F.relu(self.bn1(self.conv1(input)))
         output = F.relu(self.bn2(self.conv2(output)))
         output = self.pool(output)
+        output = F.relu(self.bn3(self.conv3(output)))
         output = F.relu(self.bn4(self.conv4(output)))
-        output = F.relu(self.bn5(self.conv5(output)))
         output = output.view(-1, 24*10*10)
         output = self.fc1(output)
 
         return output
-
 
 def train_one_epoch(model, train_loader, criterion, optimizer, device):
     model.train()
@@ -87,7 +85,6 @@ def train_one_epoch(model, train_loader, criterion, optimizer, device):
 
     epoch_loss = running_loss / len(train_loader.dataset)
     return epoch_loss
-
 
 def evaluate(model, val_loader, criterion, device):
     model.eval()
@@ -112,7 +109,6 @@ def evaluate(model, val_loader, criterion, device):
     val_accuracy = correct / total
     return val_loss, val_accuracy
 
-
 def train(model, train_loader, val_loader, criterion, optimizer, num_epochs, device):
     model.to(device)
 
@@ -125,7 +121,6 @@ def train(model, train_loader, val_loader, criterion, optimizer, num_epochs, dev
 
     print('Training complete')
     return model
-
 
 def main():
     BATCH_SIZE = 4
