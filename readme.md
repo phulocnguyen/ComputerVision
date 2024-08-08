@@ -1,4 +1,4 @@
-# Implementation of basic Computer Vision Tasks
+Implementation of Basic Computer Vision Tasks
 <!-- TABLE OF CONTENTS -->
 <details>
   <summary>Table of Contents</summary>
@@ -23,103 +23,89 @@
     <li><a href="#contact">Contact</a></li>
   </ol>
 </details>
-
-
-
 <!-- ABOUT THE PROJECT -->
-## About The Project
-This project implements some basic Computer Vision related tasks including image classification, image segmentation, object detection, optical character recognition, video classification. It is helpful for beginners on learning Computer Vision and Deep Learning since it requires the basic knowledge in the field of Deep Learning such as CNN, RNN, Transformer, YOLO, ...
+About The Project
+This repository contains implementations of fundamental computer vision tasks including image classification, image segmentation, object detection, optical character recognition (OCR), and video classification. It is designed as a learning resource for beginners interested in computer vision and deep learning. The project assumes basic knowledge of deep learning concepts such as Convolutional Neural Networks (CNNs), Recurrent Neural Networks (RNNs), Transformers, and models like YOLO.
 
-Here's why:
-* Your time should be focused on creating something amazing. A project that solves a problem and helps others
-* You shouldn't be doing the same tasks over and over like creating a README from scratch
-* You should implement DRY principles to the rest of your life :smile:
-
-Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue. Thanks to all the people have contributed to expanding this template!
-
+Features
+Practical examples of core computer vision tasks.
+Modular code that can be easily extended or adapted for different projects.
+A focus on simplicity and clarity to facilitate learning.
+Why Use This Project
+Save time by leveraging ready-to-use implementations.
+Focus on learning and applying key concepts rather than starting from scratch.
+Contribute to and improve this resource, fostering a collaborative learning environment.
+No single template can cover all needs, so feel free to suggest improvements or contribute by forking the repo and submitting a pull request.
 
 <!-- GETTING STARTED -->
-## Getting Started
+Getting Started
+To set up this project locally, follow these steps.
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+Prerequisites
+Ensure you have the following installed:
 
-### Prerequisites
+Python 3.x
+pip
+OpenCV, TensorFlow, PyTorch, and other required libraries (detailed in requirements.txt).
+Installation
+Clone the repository:
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
+sh
+Copy code
+git clone https://github.com/phulocnguyen/ComputerVision.git
+Navigate to the project directory:
 
-### Installation
+sh
+Copy code
+cd ComputerVision
+Install the required packages:
 
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
+sh
+Copy code
+pip install -r requirements.txt
+(Optional) Configure environment variables or API keys if required by specific tasks:
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
-   ```sh
-   git clone https://github.com/your_username_/Project-Name.git
-   ```
-3. Install NPM packages
-   ```sh
-   npm install
-   ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
-   ```
-
+sh
+Copy code
+export API_KEY='YOUR_API_KEY'
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
 <!-- USAGE EXAMPLES -->
-## Usage
+Usage
+This section provides examples of how to use the different modules within the project. For instance, to run the image classification task, use the following command:
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
-
-
+sh
+Copy code
+python image_classification.py --image_path path/to/image.jpg
+For more detailed instructions and examples, refer to the documentation.
 
 <!-- ROADMAP -->
-## Roadmap
-
-- [x] Add Changelog
-- [x] Add back to top links
-- [ ] Add Additional Templates w/ Examples
-- [ ] Add "components" document to easily copy & paste sections of the readme
-- [ ] Multi-language Support
-    - [ ] Chinese
-    - [ ] Spanish
-
-
+Roadmap
+ Implement basic computer vision tasks
+ Add documentation and examples
+ Expand the repository with advanced tasks and models
+ Add tutorials and walkthroughs for beginners
+ Multi-language support
+ Chinese
+ Spanish
 <!-- CONTRIBUTING -->
-## Contributing
+Contributing
+Contributions make the open-source community a great place to learn and grow. If you have ideas to improve this project, feel free to fork the repo and create a pull request. You can also open an issue with the tag "enhancement".
 
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+Fork the Project
+Create your Feature Branch (git checkout -b feature/AmazingFeature)
+Commit your Changes (git commit -m 'Add some AmazingFeature')
+Push to the Branch (git push origin feature/AmazingFeature)
+Open a Pull Request
 Don't forget to give the project a star! Thanks again!
 
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-
 <!-- LICENSE -->
-## License
-
-Distributed under the MIT License. See `LICENSE.txt` for more information.
+License
+Distributed under the MIT License. See LICENSE.txt for more information.
 
 <!-- CONTACT -->
-## Contact
-
+Contact
 Phu Loc Nguyen - phuloc01.nguyen@gmail.com
 
-Project Link: [github.com/phulocnguyen/ComputerVision](https://github.com/phulocnguyen/ComputerVision)
+Project Link: https://github.com/phulocnguyen/ComputerVision
 
-
+This version is more tailored to a computer vision repository, emphasizing learning, usage instructions, and contributing.
