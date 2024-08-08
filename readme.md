@@ -1,4 +1,4 @@
-Implementation of Basic Computer Vision Tasks
+# Implementation of Basic Computer Vision Tasks
 <!-- TABLE OF CONTENTS -->
 <details>
   <summary>Table of Contents</summary>
