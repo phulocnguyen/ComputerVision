@@ -51,14 +51,17 @@ Ensure you have the following installed:
   * pip
   * OpenCV, TensorFlow, PyTorch, and other required libraries (detailed in requirements.txt).
 2. Installation
-  Clone the repository:
+  * Clone the repository:
+    
     `git clone https://github.com/phulocnguyen/ComputerVision.git`
     
-Navigate to the project directory:
-
-  `cd ComputerVision`
-Install the required packages:
-  `pip install -r requirements.txt`
+  * Navigate to the project directory:
+    
+    `cd ComputerVision`
+    
+  * Install the required packages:
+    
+    `pip install -r requirements.txt`
   
 <!-- USAGE EXAMPLES -->
 3. Usage
