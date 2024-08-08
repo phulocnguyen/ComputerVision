@@ -21,7 +21,6 @@
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
 
@@ -29,10 +28,7 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
-There are many great README templates available on GitHub; however, I didn't find one that really suited my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
+This project implements some basic Computer Vision related tasks including image classification, image segmentation, object detection, optical character recognition, video classification. It is helpful for beginners on learning Computer Vision and Deep Learning since it requires the basic knowledge in the field of Deep Learning such as CNN, RNN, Transformer, YOLO, ...
 
 Here's why:
 * Your time should be focused on creating something amazing. A project that solves a problem and helps others
