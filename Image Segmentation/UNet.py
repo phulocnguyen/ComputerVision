@@ -134,9 +134,11 @@ def train(model, train_loader, optimizer, criterion, device, num_epochs):
 
 
 def main():
+    print("Creating model")
     model = UNet(num_classes=7)  # Adjust num_classes based on the dataset
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    print("Preparing data for training")
     train_dataloader, test_dataloader = data_module()
 
     criterion = nn.CrossEntropyLoss()
