@@ -85,7 +85,7 @@ def main():
     loss_fn = YOLOLoss()
 
     # Defining the train dataset
-    train_dataset = Dataset(
+    train_dataset = YOLOdataset(
         csv_file="./data/train.csv",
         image_dir="./data/images/",
         label_dir="./data/labels/",

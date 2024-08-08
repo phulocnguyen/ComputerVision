@@ -8,7 +8,7 @@ import os
 from PIL import Image
 from YOLOmodel import *
 import albumentations as alb
-
+from albumentations.pytorch import ToTensorV2
 
 class YOLOdataset(Dataset):
     def __init__(self, csv_file, image_dir, label_dir, anchors,
@@ -125,9 +125,7 @@ def train_transform(image_size):
             # Rescale an image so that maximum side is equal to image_size
             alb.LongestMaxSize(max_size=image_size),
             # Pad remaining areas with zeros
-            alb.PadIfNeeded(
-                min_height=image_size, min_width=image_size, border_mode=cv2.BORDER_CONSTANT
-            ),
+            alb.PadIfNeeded(min_height=image_size, min_width=image_size, border_mode=0, value=0),
             # Random color jittering
             alb.ColorJitter(
                 brightness=0.5, contrast=0.5,
@@ -140,7 +138,7 @@ def train_transform(image_size):
                 mean=[0, 0, 0], std=[1, 1, 1], max_pixel_value=255
             ),
             # Convert the image to PyTorch tensor
-            alb.ToTensorV2()
+            ToTensorV2()
         ],
         # Augmentation for bounding boxes
         bbox_params=alb.BboxParams(
@@ -168,7 +166,7 @@ def test_transform(image_size):
                 mean=[0, 0, 0], std=[1, 1, 1], max_pixel_value=255
             ),
             # Convert the image to PyTorch tensor
-            alb.ToTensorV2()
+            ToTensorV2()
         ],
         # Augmentation for bounding boxes
         bbox_params=alb.BboxParams(
